@@ -1,12 +1,8 @@
 # 배민문방구 클론 프로젝트
 
-[TOC]
-
-------
 
 
-
-<img src="C:\Users\Chaeeun Kim\Desktop\d96c4902e34a9d422aa8cc78eceaa720_24167.png" style="zoom:24%;" />
+<img src="https://store.baemin.com/data/skin/front/udweb_C/img/banner/7d4c23c41296ae46ffff9e8da1350b37_56349.png" />
 
 
 
@@ -68,7 +64,7 @@
 
 ## UI 설계
 
-![image-20210626201625702](C:\Users\Chaeeun Kim\AppData\Roaming\Typora\typora-user-images\image-20210626201625702.png)
+<img src="https://github.com/chaeeun037/store-baemin-clone/edit/main/UI설계.png" />
 
 * 시맨틱 태그 사용
 
