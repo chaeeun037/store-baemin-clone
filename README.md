@@ -64,7 +64,7 @@
 
 ## UI 설계
 
-<img src="https://github.com/chaeeun037/store-baemin-clone/edit/main/UI설계.png" />
+<img src="https://github.com/chaeeun037/store-baemin-clone/edit/main/UI%EC%84%A4%EA%B3%84.png" />
 
 * 시맨틱 태그 사용
 
