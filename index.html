@@ -6,46 +6,69 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="https://store.baemin.com/data/common/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="reset.css">
     <title>배민문방구</title>
 
 </head>
 
 <body>
     <header>
-        <div id="headerTop">
-        </div>
-        <div>
-            <div>
-                <img src="/static/images/headerLogo.png" />
+        <div class="header-top_container">
+            <div id="headerTop">
             </div>
-            <div>
+        </div>
+        <div class="header-search_container">
+            <div class="header-search">
+                <img class="header-search_logo" src="/static/images/headerLogo.png" />
+            </div>
+            <div class="header-search_input">
                 <input placeholder="검색어를 입력해주세요" />
                 <div>검색아이콘</div>
             </div>
         </div>
-        <nav id="headerNav">
+        <nav class="header-gnb_container">
+            <div id="headerNav"></div>
         </nav>
     </header>
-    <section>
-        <article id="slideBanner">슬라이드 배너</article>
-        <article>
-            <div>잘나가요</div>
-            <div id="content1"></div>
-        </article>
-        <article>
-            <div>새로 나왔어요</div>
-            <div id="content2"></div>
-        </article>
-        <article>
-            <div>선물하기 딱 좋아요!</div>
-            <div id="content3"></div>
-        </article>
-        <article>
-            <div>지금은 할인 중</div>
-            <div id="content4"></div>
-        </article>
+    <section class="content_container">
+        <article id="slideBanner"></article>
+        <div class="content-goods">
+            <article>
+                <div class="content-goods_title">잘나가요</div>
+                <div id="content1"></div>
+            </article>
+            <article>
+                <div class="content-goods_title">새로 나왔어요</div>
+                <div id="content2"></div>
+            </article>
+            <article>
+                <div class="content-goods_title">선물하기 딱 좋아요!</div>
+                <div id="content3"></div>
+            </article>
+            <article>
+                <div class="content-goods_title">지금은 할인 중</div>
+                <div id="content4"></div>
+            </article>
+        </div>
     </section>
-    <footer id="footer"></footer>
+    <footer class="footer_container">
+        <div class="footer">
+            <div class="footer_logo">
+                <img src="/static/images/footerLogo.png" />
+            </div>
+            <div class="footer_content">
+                <div id="footerTop">
+                </div>
+                <div class="footer_info">
+                    <dl>상호 : (주)우아한형제들 대표 : 김범준 사업자등록번호 : 120-87-65763 통신판매업신고번호 : 2012-서울송파-0515 [사업자정보확인] </dl>
+                    <dl>대표번호 : 1670-9902 배민문방구 고객센터(1670-9902) 운영시간 : 월-금 13:00~18:00(주말•공휴일 휴무)</dl>
+                    <dl>팩스번호 : 050-605-0041 메일 : baemin_store@woowahan.com 배민문방구 인스타그램 : @baemin_store</dl>
+                    <dl>주소 : 서울특별시 송파구 위례성대로 2 장은빌딩 호스팅제공 : 엔에이치엔고도(주)</dl>
+                    <dl>© Woowa Brothers Corp. All right Reserved</dl>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="index.js"></script>
 </body>

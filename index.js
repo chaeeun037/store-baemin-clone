@@ -35,19 +35,29 @@ const data = {
     ]
 }
 
-/*
-    header top 메뉴
-*/
 const headerTop = document.getElementById('headerTop')
 for (let item of data.topMenus) {
     let child = document.createElement('div')
+    child.className = 'header-top_menu'
     child.innerHTML = item
+    let bar = document.createElement('div')
+    bar.className = 'header-top_bar'
     headerTop.appendChild(child)
+    if (item === '장바구니') {
+        child.classList.add('no-padding')
+        let cart = document.createElement('div')
+        cart.className = 'header-top_cart'
+        cart.innerHTML = 0
+        headerTop.appendChild(cart)
+    }
+    headerTop.appendChild(bar)
+
 }
 
 const headerNav = document.getElementById('headerNav')
 for (let item of data.navMenus) {
     let child = document.createElement('div')
+    child.className = 'header-gnb_menu'
     child.innerHTML = item
     headerNav.appendChild(child)
 }
@@ -61,59 +71,103 @@ for (let item of data.slideBannerImages) {
 
 const content1 = document.getElementById('content1')
 for (let item of data.contents1) {
+    let li = document.createElement('div')
+    li.className = 'content-goods_col-li'
+    let container = document.createElement('div')
+    container.className = 'content-goods_col-item'
     let img = document.createElement('img')
     img.src = item.src
+    let info = document.createElement('div')
+    info.className = 'content-goods_col-info'
     let title = document.createElement('div')
+    title.className = 'content-goods_col-title'
     title.innerHTML = item.title
     let price = document.createElement('div')
+    price.className = 'content-goods_col-price'
     price.innerHTML = item.price + '원'
-    content1.appendChild(img)
-    content1.appendChild(title)
-    content1.appendChild(price)
+    info.appendChild(title)
+    info.appendChild(price)
+    container.appendChild(img)
+    container.appendChild(info)
+    li.appendChild(container)
+    content1.appendChild(li)
 }
 
+/*
+    TODO: content 1, 2, 4 같은 코드 반복되고 있음. 코드 정리 필요
+*/
 const content2 = document.getElementById('content2')
 for (let item of data.contents2) {
+    let li = document.createElement('div')
+    li.className = 'content-goods_col-li'
+    let container = document.createElement('div')
+    container.className = 'content-goods_col-item'
     let img = document.createElement('img')
     img.src = item.src
+    let info = document.createElement('div')
+    info.className = 'content-goods_col-info'
     let title = document.createElement('div')
+    title.className = 'content-goods_col-title'
     title.innerHTML = item.title
     let price = document.createElement('div')
+    price.className = 'content-goods_col-price'
     price.innerHTML = item.price + '원'
-    content2.appendChild(img)
-    content2.appendChild(title)
-    content2.appendChild(price)
+    info.appendChild(title)
+    info.appendChild(price)
+    container.appendChild(img)
+    container.appendChild(info)
+    li.appendChild(container)
+    content2.appendChild(li)
 }
 
 const content3 = document.getElementById('content3')
 for (let item of data.contents3) {
+    let container = document.createElement('div')
+    container.className = 'content-goods_row-item'
     let img = document.createElement('img')
     img.src = item.src
+    let titles = document.createElement('div')
+    titles.className = 'content-goods_row-titles'
     let title = document.createElement('div')
+    title.className = 'content-goods_row-title'
     title.innerHTML = item.title
     let content = document.createElement('div')
     content.innerHTML = item.content
-    content3.appendChild(img)
-    content3.appendChild(title)
-    content3.appendChild(content)
+    container.appendChild(img)
+    titles.appendChild(title)
+    titles.appendChild(content)
+    container.appendChild(titles)
+    content3.appendChild(container)
 }
 
 const content4 = document.getElementById('content4')
 for (let item of data.contents4) {
+    let li = document.createElement('div')
+    li.className = 'content-goods_col-li'
+    let container = document.createElement('div')
+    container.className = 'content-goods_col-item'
     let img = document.createElement('img')
     img.src = item.src
+    let info = document.createElement('div')
+    info.className = 'content-goods_col-info'
     let title = document.createElement('div')
+    title.className = 'content-goods_col-title'
     title.innerHTML = item.title
     let price = document.createElement('div')
+    price.className = 'content-goods_col-price'
     price.innerHTML = item.price + '원'
-    content4.appendChild(img)
-    content4.appendChild(title)
-    content4.appendChild(price)
+    info.appendChild(title)
+    info.appendChild(price)
+    container.appendChild(img)
+    container.appendChild(info)
+    li.appendChild(container)
+    content4.appendChild(li)
 }
 
-const footer = document.getElementById('footer')
+const footer = document.getElementById('footerTop')
 for (let item of data.footerMenus) {
     let child = document.createElement('div')
+    child.className = 'footer-top_item'
     child.innerHTML = item
     footer.appendChild(child)
 }
