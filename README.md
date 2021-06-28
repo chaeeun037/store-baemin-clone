@@ -126,3 +126,16 @@
 * 반복되는 텍스트
   * dl, dt, dd 사용
 
+
+
+
+
+## TODO LIST
+
+* 슬라이드 배너 구현
+* search input, icon 구현
+* green, new, sale tag 구현
+* 세일 가격 구현
+* footer info dl, dt, dd 로 수정
+* 세세한 UI 수정
+* 코드 리팩토링
