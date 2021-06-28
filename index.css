@@ -95,6 +95,37 @@
     width: 100%;
 }
 
+.swiper-container {
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    display: block;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #b5b5b5;
+    opacity: 0.75;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+}
+
 .content-goods {
     width: 1200px;
     margin: 0 auto;

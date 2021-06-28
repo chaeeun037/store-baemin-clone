@@ -5,6 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="https://store.baemin.com/data/common/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="reset.css">
     <title>배민문방구</title>
@@ -31,8 +32,12 @@
         </nav>
     </header>
     <section class="content_container">
-        <article id="slideBanner"></article>
-        <div class="content-goods">
+        <article class="swiper-container mySwiper">
+            <div id="slideBanner" class="swiper-wrapper">
+            </div>
+            <div class="swiper-pagination"></div>
+        </article>
+        <article class="content-goods">
             <article>
                 <div class="content-goods_title">잘나가요</div>
                 <div id="content1"></div>
@@ -49,7 +54,7 @@
                 <div class="content-goods_title">지금은 할인 중</div>
                 <div id="content4"></div>
             </article>
-        </div>
+        </article>
     </section>
     <footer class="footer_container">
         <div class="footer">
@@ -71,6 +76,22 @@
     </footer>
 
     <script src="index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 
 </html>

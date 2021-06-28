@@ -84,9 +84,12 @@ for (let item of data.navMenus) {
 
 const slideBanner = document.getElementById('slideBanner')
 for (let item of data.slideBannerImages) {
-    let child = document.createElement('img')
-    child.src = item
-    slideBanner.appendChild(child)
+    let slide = document.createElement('div')
+    slide.className = 'swiper-slide'
+    let img = document.createElement('img')
+    img.src = item
+    slide.appendChild(img)
+    slideBanner.appendChild(slide)
 }
 
 const content1 = document.getElementById('content1')
