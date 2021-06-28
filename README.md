@@ -114,6 +114,32 @@
 
 
 
+* div 태그가 아닌 적절한 html 태그 사용
+  * a, p, ul, li, dl, dt, dd 등
+
+
+
+* 존재 이유를 알 수 없는 dom 요소
+
+  * 전체를 덮고있는 요소?
+
+  
+
+* 뭔가 래핑되어있는 dom tree 구성
+
+  * 셀렉터로 선택해도 숨겨져있는 느낌?
+  * green, new 등 태그 요소 선택 해보아도 숨겨져있어서 선택을 할 수가 없다!!
+
+
+
+* 쌓이는 순서를 모르겠는 dom 요소
+* 중간에 갑자기 script가 등장..?
+* 메인 페이지 goods 이미지 저장 권한이 없음
+* ::after, before 등을 자주 사용한다.
+* 
+
+
+
 * 반복되는 item 구성
   * ul -> li -> a
 
@@ -132,6 +158,7 @@
 
 ## TODO LIST
 
+* montserrat 폰트 적용
 * 슬라이드 배너 구현
 * search input, icon 구현
 * green, new, sale tag 구현
