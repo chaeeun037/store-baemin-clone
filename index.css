@@ -138,10 +138,11 @@
 }
 
 .content-goods_col-price {
-    font-family: 'Montserrat'; /*적용 안되고 있음*/
+    font-family: 'Montserrat';
     padding: 5px 0 0 0;
     font-size: 16px;
     font-weight: 600;
+    color: #000;
 }
 
 .content-goods_col-item img {

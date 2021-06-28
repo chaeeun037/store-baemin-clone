@@ -35,6 +35,26 @@ const data = {
     ]
 }
 
+/*
+    1000단위 컴마 찍는 메소드
+*/
+const formPrice = (p) => {
+    var len, point, res; 
+
+    p = p + ""; 
+    point = p.length % 3 ;
+    len = p.length; 
+   
+    res = p.substring(0, point); 
+    while (point < len) { 
+        if (res != "") res += ","; 
+        res += p.substring(point, point + 3); 
+        point += 3; 
+    } 
+     
+    return res;
+}
+
 const headerTop = document.getElementById('headerTop')
 for (let item of data.topMenus) {
     let child = document.createElement('div')
@@ -84,7 +104,7 @@ for (let item of data.contents1) {
     title.innerHTML = item.title
     let price = document.createElement('div')
     price.className = 'content-goods_col-price'
-    price.innerHTML = item.price + '원'
+    price.innerHTML = formPrice(item.price) + '원'
     info.appendChild(title)
     info.appendChild(price)
     container.appendChild(img)
@@ -111,7 +131,7 @@ for (let item of data.contents2) {
     title.innerHTML = item.title
     let price = document.createElement('div')
     price.className = 'content-goods_col-price'
-    price.innerHTML = item.price + '원'
+    price.innerHTML = formPrice(item.price) + '원'
     info.appendChild(title)
     info.appendChild(price)
     container.appendChild(img)
@@ -155,7 +175,7 @@ for (let item of data.contents4) {
     title.innerHTML = item.title
     let price = document.createElement('div')
     price.className = 'content-goods_col-price'
-    price.innerHTML = item.price + '원'
+    price.innerHTML = formPrice(item.price) + '원'
     info.appendChild(title)
     info.appendChild(price)
     container.appendChild(img)

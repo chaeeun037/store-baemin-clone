@@ -158,7 +158,6 @@
 
 ## TODO LIST
 
-* montserrat 폰트 적용
 * 슬라이드 배너 구현
 * search input, icon 구현
 * green, new, sale tag 구현
