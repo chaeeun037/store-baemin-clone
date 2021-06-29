@@ -19,6 +19,7 @@
     line-height: 40px;
     color: #717171;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .no-padding {
@@ -42,6 +43,7 @@
     padding: 0 5px 1px 4px;
     font-size: 10px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .header-search_container {
@@ -106,15 +108,19 @@
     font-weight: normal;
     text-align: center;
     line-height: 55px;
+    cursor: pointer;
 }
 
 .content_container {
     width: 100%;
+    min-height: 400px;
+    padding: 0 0 60px 0;
 }
 
 .swiper-container {
     width: 100%;
     height: 500px;
+    cursor: pointer;
 }
 
 .swiper-slide {
@@ -280,7 +286,7 @@
 
 .footer {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 38px auto;
     padding-top: 30px;
     display: flex;
 }
@@ -313,6 +319,7 @@
     color: #333;
     font-weight: bold;
     margin-right: 50px;
+    cursor: pointer;
 }
 
 .footer_info-list {
@@ -351,5 +358,13 @@
     font-size: 11.5px;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.footer_info-mail {
+    color: #717171;
+}
+
+.footer_info-mail:hover {
+    text-decoration: underline;
 }
 
