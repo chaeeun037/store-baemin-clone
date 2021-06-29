@@ -35,25 +35,37 @@ const data = {
     ]
 }
 
-/*
-    1000단위 컴마 찍는 메소드
+/**
+ * 1000단위 컴마 찍는 메소드
 */
 const formPrice = (p) => {
-    var len, point, res; 
+    var len, point, res
 
-    p = p + ""; 
-    point = p.length % 3 ;
-    len = p.length; 
-   
-    res = p.substring(0, point); 
-    while (point < len) { 
-        if (res != "") res += ","; 
-        res += p.substring(point, point + 3); 
-        point += 3; 
-    } 
-     
-    return res;
+    p = p + ""
+    point = p.length % 3
+    len = p.length
+
+    res = p.substring(0, point)
+    while (point < len) {
+        if (res != "") res += ","
+        res += p.substring(point, point + 3)
+        point += 3
+    }
+
+    return res
 }
+
+/**
+ * 세일 가격 계산하는 메소드
+ */
+
+ const calcSalePrice = (p, s) => {
+     if(s) {
+         return p * (100 - s) * 0.01
+     } else {
+         return p
+     }
+ }
 
 const headerTop = document.getElementById('headerTop')
 for (let item of data.topMenus) {
@@ -129,14 +141,29 @@ for (let item of data.contents2) {
     img.src = item.src
     let info = document.createElement('div')
     info.className = 'content-goods_col-info'
+    if (item.sale) {
+        let sale = document.createElement('div')
+        sale.className = 'content-goods_col-sale'
+        sale.innerHTML = item.sale + '%'
+        info.appendChild(sale)
+    }
     let title = document.createElement('div')
     title.className = 'content-goods_col-title'
     title.innerHTML = item.title
+    let money = document.createElement('div')
+    money.className = 'content-goods_col-money'
     let price = document.createElement('div')
     price.className = 'content-goods_col-price'
-    price.innerHTML = formPrice(item.price) + '원'
+    price.innerHTML = formPrice(calcSalePrice(item.price, item.sale)) + '원'
     info.appendChild(title)
-    info.appendChild(price)
+    if(item.sale) {
+        let origin = document.createElement('div')
+        origin.className = 'content-goods_col-origin'
+        origin.innerHTML = formPrice(item.price) + '원'
+        money.appendChild(origin)
+    }
+    money.appendChild(price)
+    info.appendChild(money)
     container.appendChild(img)
     container.appendChild(info)
     li.appendChild(container)

@@ -168,12 +168,33 @@
     padding: 3px 0 0 0;
 }
 
+.content-goods_col-money {
+    padding: 5px 0 0 0;
+    line-height: 1;
+}
+
 .content-goods_col-price {
     font-family: 'Montserrat';
-    padding: 5px 0 0 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #000;
+    padding: 1px 0 0px 0;
+    display: block;
+    margin-left: 1px;
+}
+
+.content-goods_col-sale {
+    display: block;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #ff6350!important;
+    font-weight: 600;
+}
+
+.content-goods_col-origin {
+    font-size: 12px;
+    color: #888;
+    text-decoration: line-through;
 }
 
 .content-goods_col-item img {
