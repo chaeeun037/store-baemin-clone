@@ -52,6 +52,7 @@
 .header-search {
     width: 1200px;
     margin: 0 auto;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,12 +63,28 @@
     width: 156px;
 }
 
-.header-search_input {
+.header-search_input-container {
     position: absolute;
-    top: 15px;
-    right: 0;
-    width: 33.3%;
+    top: 33px;
+    right: -34px;
     display: flex;
+    align-items: center;
+}
+
+.header-search_input-box {
+    border-bottom: 1px solid #333;
+    width: 250px;
+}
+
+.header-search_input {
+    width: 100%;
+    height: 34px;
+    padding: 5px 40px 5px 0px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 14px;
+    border: none 0;
+    outline: none;
 }
 
 .header-gnb_container {
