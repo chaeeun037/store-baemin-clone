@@ -153,6 +153,7 @@
 .content-goods_col-item {
     padding: 0 10px;
     color: #1c1c1c;
+    position: relative;
 }
 
 .content-goods_col-info {
@@ -166,6 +167,7 @@
     font-size: 16px;
     font-weight: normal;
     padding: 3px 0 0 0;
+    cursor: pointer;
 }
 
 .content-goods_col-money {
@@ -197,13 +199,30 @@
     text-decoration: line-through;
 }
 
-.content-goods_col-item img {
+.content-goods_col-item-photo {
     width: 100%;
     display: inline-block !important;
     overflow: hidden;
-    position: relative;
     text-align: center;
     vertical-align: middle;
+    cursor: pointer;
+}
+
+.content-goods_col-tag-box {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    margin-left: -3px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.content-goods_col-tag-box img {
+    display: inline-block;
+    padding: 5px 0 0 0;
+    height: 30px;
 }
 
 #content3 {

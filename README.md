@@ -176,7 +176,8 @@
 ## TODO LIST
 
 * search input, icon 구현
-* green, new, sale tag 구현
 * footer info dl, dt, dd 로 수정
+* goods 아이템에 마우스 hover시 찜, 장바구니 아이콘 생기는 것 애니메이션 구현
+* 상단바 스크롤 내렸을 때 위에 달라붙는 것 구현
 * 세세한 UI 수정
 * 코드 리팩토링

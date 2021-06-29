@@ -67,6 +67,71 @@ const formPrice = (p) => {
      }
  }
 
+ /**
+  * renderContent 메소드
+  * renderContent(element id, content data, no sale tag)
+  * 
+  */
+ const renderContent = (eid, cdata, noSale) => {
+    for (let item of cdata) {
+        let li = document.createElement('div')
+        li.className = 'content-goods_col-li'
+        let container = document.createElement('div')
+        container.className = 'content-goods_col-item'
+        let img = document.createElement('img')
+        img.className = 'content-goods_col-item-photo'
+        img.src = item.src
+        // 이미지 상단 tag 부분
+        let tags = document.createElement('div')
+        tags.className = 'content-goods_col-tag-box'
+        if(item.isGreen) {
+            let tgreen = document.createElement('img')
+            tgreen.src = '/static/images/tag-green.png'
+            tags.appendChild(tgreen)
+        }
+        if(item.isNew) {
+            let tnew = document.createElement('img')
+            tnew.src = '/static/images/tag-new.png'
+            tags.appendChild(tnew)
+        }
+        if(!noSale && item.sale) {
+            let tsale = document.createElement('img')
+            tsale.src = '/static/images/tag-sale.png'
+            tags.appendChild(tsale)
+        }
+        let info = document.createElement('div')
+        info.className = 'content-goods_col-info'
+        if (item.sale) {    // 빨간색 세일 표시 부분
+            let sale = document.createElement('div')
+            sale.className = 'content-goods_col-sale'
+            sale.innerHTML = item.sale + '%'
+            info.appendChild(sale)
+        }
+        let title = document.createElement('div')
+        title.className = 'content-goods_col-title'
+        title.innerHTML = item.title
+        let money = document.createElement('div')
+        money.className = 'content-goods_col-money'
+        let price = document.createElement('div')
+        price.className = 'content-goods_col-price'
+        price.innerHTML = formPrice(calcSalePrice(item.price, item.sale)) + '원'
+        info.appendChild(title)
+        if(item.sale) { // 원래 가격 부분
+            let origin = document.createElement('div')
+            origin.className = 'content-goods_col-origin'
+            origin.innerHTML = formPrice(item.price) + '원'
+            money.appendChild(origin)
+        }
+        money.appendChild(price)
+        info.appendChild(money)
+        container.appendChild(tags)
+        container.appendChild(img)
+        container.appendChild(info)
+        li.appendChild(container)
+        eid.appendChild(li)
+    }
+ }
+
 const headerTop = document.getElementById('headerTop')
 for (let item of data.topMenus) {
     let child = document.createElement('div')
@@ -105,70 +170,11 @@ for (let item of data.slideBannerImages) {
 }
 
 const content1 = document.getElementById('content1')
-for (let item of data.contents1) {
-    let li = document.createElement('div')
-    li.className = 'content-goods_col-li'
-    let container = document.createElement('div')
-    container.className = 'content-goods_col-item'
-    let img = document.createElement('img')
-    img.src = item.src
-    let info = document.createElement('div')
-    info.className = 'content-goods_col-info'
-    let title = document.createElement('div')
-    title.className = 'content-goods_col-title'
-    title.innerHTML = item.title
-    let price = document.createElement('div')
-    price.className = 'content-goods_col-price'
-    price.innerHTML = formPrice(item.price) + '원'
-    info.appendChild(title)
-    info.appendChild(price)
-    container.appendChild(img)
-    container.appendChild(info)
-    li.appendChild(container)
-    content1.appendChild(li)
-}
+renderContent(content1, data.contents1)
 
-/*
-    TODO: content 1, 2, 4 같은 코드 반복되고 있음. 코드 정리 필요
-*/
 const content2 = document.getElementById('content2')
-for (let item of data.contents2) {
-    let li = document.createElement('div')
-    li.className = 'content-goods_col-li'
-    let container = document.createElement('div')
-    container.className = 'content-goods_col-item'
-    let img = document.createElement('img')
-    img.src = item.src
-    let info = document.createElement('div')
-    info.className = 'content-goods_col-info'
-    if (item.sale) {
-        let sale = document.createElement('div')
-        sale.className = 'content-goods_col-sale'
-        sale.innerHTML = item.sale + '%'
-        info.appendChild(sale)
-    }
-    let title = document.createElement('div')
-    title.className = 'content-goods_col-title'
-    title.innerHTML = item.title
-    let money = document.createElement('div')
-    money.className = 'content-goods_col-money'
-    let price = document.createElement('div')
-    price.className = 'content-goods_col-price'
-    price.innerHTML = formPrice(calcSalePrice(item.price, item.sale)) + '원'
-    info.appendChild(title)
-    if(item.sale) {
-        let origin = document.createElement('div')
-        origin.className = 'content-goods_col-origin'
-        origin.innerHTML = formPrice(item.price) + '원'
-        money.appendChild(origin)
-    }
-    money.appendChild(price)
-    info.appendChild(money)
-    container.appendChild(img)
-    container.appendChild(info)
-    li.appendChild(container)
-    content2.appendChild(li)
-}
+renderContent(content2, data.contents2)
+
 
 const content3 = document.getElementById('content3')
 for (let item of data.contents3) {
@@ -191,28 +197,7 @@ for (let item of data.contents3) {
 }
 
 const content4 = document.getElementById('content4')
-for (let item of data.contents4) {
-    let li = document.createElement('div')
-    li.className = 'content-goods_col-li'
-    let container = document.createElement('div')
-    container.className = 'content-goods_col-item'
-    let img = document.createElement('img')
-    img.src = item.src
-    let info = document.createElement('div')
-    info.className = 'content-goods_col-info'
-    let title = document.createElement('div')
-    title.className = 'content-goods_col-title'
-    title.innerHTML = item.title
-    let price = document.createElement('div')
-    price.className = 'content-goods_col-price'
-    price.innerHTML = formPrice(item.price) + '원'
-    info.appendChild(title)
-    info.appendChild(price)
-    container.appendChild(img)
-    container.appendChild(info)
-    li.appendChild(container)
-    content4.appendChild(li)
-}
+renderContent(content4, data.contents4, true)
 
 const footer = document.getElementById('footerTop')
 for (let item of data.footerMenus) {
