@@ -69,7 +69,9 @@ const formPrice = (p) => {
 
  /**
   * renderContent 메소드
-  * renderContent(element id, content data, no sale tag)
+  * content 1, 2, 4를 렌더링한다.
+  * 
+  * renderContent(element id, content data, is no sale tag)
   * 
   */
  const renderContent = (eid, cdata, noSale) => {

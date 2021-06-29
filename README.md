@@ -82,6 +82,7 @@
 * 코드 재사용성
   * 공통되는 부분 코드 재사용하게 개발
     * article - 잘나가요, 새로 나왔어요, 지금은 할인 중
+    * 공통 함수로 묶어서 렌더링
 
 
 
@@ -143,12 +144,14 @@
 
 
 * 쌓이는 순서를 모르겠는 dom 요소
+
 * 중간에 갑자기 script가 등장..?
+
 * 메인 페이지 goods 이미지 저장 권한이 없음
+
 * ::after, before 등을 자주 사용한다.
-* 
 
-
+  
 
 * 반복되는 item 구성
   * ul -> li -> a
@@ -160,7 +163,10 @@
 
 
 * 반복되는 텍스트
+
   * dl, dt, dd 사용
+
+  
 
 * 슬라이드 배너
   * Swiper  Effect fade 사용
@@ -171,12 +177,19 @@
 
 * js로 ui element 만들고 붙일 때 코드 정리? 어떻게 해야하지?
 
+  * appendchild, className 등 너무 많고 순서가 지저분해!
+
+  
+
+* footer info에 address 태그 사용
+
+* footer info는 정적 데이터라고 판단해서 직접 퍼블리싱 진행
+
 
 
 ## TODO LIST
 
 * search input, icon 구현
-* footer info dl, dt, dd 로 수정
 * goods 아이템에 마우스 hover시 찜, 장바구니 아이콘 생기는 것 애니메이션 구현
 * 상단바 스크롤 내렸을 때 위에 달라붙는 것 구현
 * 세세한 UI 수정
