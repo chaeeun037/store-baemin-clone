@@ -61,26 +61,26 @@ const formPrice = (p) => {
  * 실제 데이터가 없으므로 반대로 세일 %로 세일 가격을 역계산한다.
  */
 
- const calcSalePrice = (p, s) => {
-     if(s) {
+const calcSalePrice = (p, s) => {
+    if (s) {
         let res = p * (100 - s) * 0.01 + ""
-        if(res.length > 3 && res.substring(res.length-3, res.length) < 200) {
-            res = res.substring(0, res.length-3) + "000"
+        if (res.length > 3 && res.substring(res.length - 3, res.length) < 200) {
+            res = res.substring(0, res.length - 3) + "000"
         }
-         return res 
-     } else {
-         return p
-     }
- }
+        return res
+    } else {
+        return p
+    }
+}
 
- /**
-  * renderContent 메소드
-  * content 1, 2, 4를 렌더링한다.
-  * 
-  * renderContent(element id, content data, is no sale tag)
-  * 
-  */
- const renderContent = (eid, cdata, noSale) => {
+/**
+ * renderContent 메소드
+ * content 1, 2, 4를 렌더링한다.
+ * 
+ * renderContent(element id, content data, is no sale tag)
+ * 
+ */
+const renderContent = (eid, cdata, noSale) => {
     for (let item of cdata) {
         let li = document.createElement('div')
         li.className = 'content-goods_col-li'
@@ -92,17 +92,17 @@ const formPrice = (p) => {
         // 이미지 상단 tag 부분
         let tags = document.createElement('div')
         tags.className = 'content-goods_col-tag-box'
-        if(item.isGreen) {
+        if (item.isGreen) {
             let tgreen = document.createElement('img')
             tgreen.src = '/static/images/tag-green.png'
             tags.appendChild(tgreen)
         }
-        if(item.isNew) {
+        if (item.isNew) {
             let tnew = document.createElement('img')
             tnew.src = '/static/images/tag-new.png'
             tags.appendChild(tnew)
         }
-        if(!noSale && item.sale) {
+        if (!noSale && item.sale) {
             let tsale = document.createElement('img')
             tsale.src = '/static/images/tag-sale.png'
             tags.appendChild(tsale)
@@ -124,7 +124,7 @@ const formPrice = (p) => {
         price.className = 'content-goods_col-price'
         price.innerHTML = formPrice(calcSalePrice(item.price, item.sale)) + '원'
         info.appendChild(title)
-        if(item.sale) { // 원래 가격 부분
+        if (item.sale) { // 원래 가격 부분
             let origin = document.createElement('div')
             origin.className = 'content-goods_col-origin'
             origin.innerHTML = formPrice(item.price) + '원'
@@ -138,7 +138,30 @@ const formPrice = (p) => {
         li.appendChild(container)
         eid.appendChild(li)
     }
- }
+}
+
+let searchInput = document.getElementById('searchInput')
+let recentBox = document.getElementById('recentSearchBox')
+let closeButton = document.getElementById('recentSearchClose')
+
+const openSearchRecent = (input, box) => {
+    input.addEventListener("click", () => {
+        box.style.display = 'inline-block'
+    })
+}
+
+const closeSearchRecent = (input, box, close) => {
+    close.addEventListener("click", () => {
+        box.style.display = 'none'
+    })
+    input.addEventListener("blur", () => {
+        box.style.display = 'none'
+    })
+}
+
+openSearchRecent(searchInput, recentBox)
+closeSearchRecent(searchInput, recentBox, closeButton)
+
 
 const headerTop = document.getElementById('headerTop')
 for (let item of data.topMenus) {

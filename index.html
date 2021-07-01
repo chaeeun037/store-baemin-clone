@@ -24,7 +24,16 @@
                 <img class="header-search_logo" src="/static/images/headerLogo.png" />
                 <div class="header-search_input-container">
                     <div class="header-search_input-box">
-                        <input class="header-search_input" placeholder="검색어를 입력해주세요" />
+                        <input id="searchInput" class="header-search_input" placeholder="검색어를 입력해주세요" />
+                        <div id="recentSearchBox" class="header-search_content-box">
+                            <div class="header-search_content-recent-box">
+                                <dt>최근 검색어</dt>
+                                <dd>최근 검색어가 없습니다.</dd>
+                            </div>
+                            <div class="header-search_content-bottom">
+                                <div id="recentSearchClose" class="header-search_content-close">닫기</div>
+                            </div>
+                        </div>
                     </div>
                     <div><i class="xi-search" style="font-size: 18px;"></i></div>
                 </div>
@@ -107,7 +116,8 @@
                     </dl>
                     <dl>
                         <dt>메일 : </dt>
-                        <dd><a href="mailto:baemin_store@woowahan.com" class="footer_info-mail">baemin_store@woowahan.com</a></dd>
+                        <dd><a href="mailto:baemin_store@woowahan.com"
+                                class="footer_info-mail">baemin_store@woowahan.com</a></dd>
                     </dl>
                     <dl>
                         <dt>배민문방구 인스타그램 : </dt>
