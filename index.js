@@ -140,6 +140,11 @@ const renderContent = (eid, cdata, noSale) => {
     }
 }
 
+
+/**
+ * 상단 search input 이벤트 핸들러 달고 호출
+ * 코드 정리 필요
+ */
 let searchInput = document.getElementById('searchInput')
 let recentBox = document.getElementById('recentSearchBox')
 let closeButton = document.getElementById('recentSearchClose')
@@ -161,6 +166,34 @@ const closeSearchRecent = (input, box, close) => {
 
 openSearchRecent(searchInput, recentBox)
 closeSearchRecent(searchInput, recentBox, closeButton)
+
+
+/**
+ * 스크롤 내렸을 때 헤더 상단에 붙이기
+ */
+let headerTopFixed = document.getElementById('headerTopFixed')
+let headerLogoFixed = document.getElementById('headerLogoFixed')
+let headerGnbFixed = document.getElementById('headerGnbFixed')
+let isFixed = false
+const scrollEvent = (top, logo, gnb) => {
+    document.addEventListener("scroll", (e) => {
+        if (!isFixed && document.documentElement.scrollTop >= 50) {
+            isFixed = true
+            top.classList.add('fixed')
+            logo.classList.add('fixed')
+            gnb.classList.add('fixed')
+        }
+    })
+    document.addEventListener("scroll", (e) => {
+        if (isFixed && document.documentElement.scrollTop < 50) {
+            isFixed = false
+            top.classList.remove('fixed')
+            logo.classList.remove('fixed')
+            gnb.classList.remove('fixed')
+        }
+    })
+}
+scrollEvent(headerTopFixed, headerLogoFixed, headerGnbFixed)
 
 
 const headerTop = document.getElementById('headerTop')
