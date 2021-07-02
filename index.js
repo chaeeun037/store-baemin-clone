@@ -270,3 +270,7 @@ for (let item of data.footerMenus) {
     child.innerHTML = item
     footer.appendChild(child)
 }
+
+/**
+ * goods item에 마우스 hover했을 때 찜 버튼, 카트 버튼 만들기
+ */

@@ -236,5 +236,43 @@
 ## TODO LIST
 
 * goods 아이템에 마우스 hover시 찜, 장바구니 아이콘 생기는 것 애니메이션 구현
-* 상단바 스크롤 내렸을 때 위에 달라붙는 것 구현
+* 확대했을 때 상단? 슬라이드 배너 UI 부분 이상하다
 * 코드 리팩토링
+
+
+
+
+
+## 코드 리뷰
+
+1. index.html:144줄 <script src="index.js"></script> 부분을 145줄 아래로 옮기기
+  - 라이브러리가 모두 로딩된 이후에, 어플리케이션 로직을 넣는게 좋습니댜
+
+2. index.html:147줄 <script> 태그 내용을 index.js로 옮기기
+  - document.DOMContentLoaded = () => { /* TODO */ }; 를 사용해보세요
+
+3. index.js 파일 formatting 한번 돌리기
+  - 40라인 인덴테이션, 63라인 줄 공백같은것을 없애면 더 깔끔해집니다.
+
+4. index.js 문자열은 ' 쿼테이션 1개로 통일해주세요.
+
+5. index.js 파일에서 DOM element 만드는 helper 함수 생성해서 사용하기
+
+```
+const makeAndAppendElement = (tagName, attributeMap, parentElement) => {
+  let element = document.createElement(tagName);
+  if (attributeMap) {
+    for (const key of attributeMap) {
+      element[key] = attributeMap[key];
+    }
+  }
+  if (parentElement) {
+    parentElement.appendChild(element);
+  }
+  return element;
+}
+```
+
+6. index.js 가급적 const를 쓸 수 있는곳은 모두 let 대신에 const 쓰기
+  - 문맥상 const 는 변할수 없는 참조, 값을 나타내기에 가독성과 안정성을 높여줍니다.
+  - for 문 안의 let도 const로 바꿔보세요.
