@@ -41,13 +41,13 @@ const data = {
 const formPrice = (p) => {
     var len, point, res
 
-    p = p + ""
+    p = p + ''
     point = p.length % 3
     len = p.length
 
     res = p.substring(0, point)
     while (point < len) {
-        if (res != "") res += ","
+        if (res != '') res += ','
         res += p.substring(point, point + 3)
         point += 3
     }
@@ -62,9 +62,9 @@ const formPrice = (p) => {
  */
 const calcSalePrice = (p, s) => {
     if (s) {
-        let res = p * (100 - s) * 0.01 + ""
+        let res = p * (100 - s) * 0.01 + ''
         if (res.length > 3 && res.substring(res.length - 3, res.length) < 200) {
-            res = res.substring(0, res.length - 3) + "000"
+            res = res.substring(0, res.length - 3) + '000'
         }
         return res
     } else {
@@ -149,16 +149,16 @@ let recentBox = document.getElementById('recentSearchBox')
 let closeButton = document.getElementById('recentSearchClose')
 
 const openSearchRecent = (input, box) => {
-    input.addEventListener("click", () => {
+    input.addEventListener('click', () => {
         box.style.display = 'inline-block'
     })
 }
 
 const closeSearchRecent = (input, box, close) => {
-    close.addEventListener("click", () => {
+    close.addEventListener('click', () => {
         box.style.display = 'none'
     })
-    input.addEventListener("blur", () => {
+    input.addEventListener('blur', () => {
         box.style.display = 'none'
     })
 }
@@ -171,15 +171,15 @@ closeSearchRecent(searchInput, recentBox, closeButton)
  * 슬라이드 배너
  * <!-- Initialize Swiper -->
  */
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper('.mySwiper', {
     spaceBetween: 30,
-    effect: "fade",
+    effect: 'fade',
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
     },
     pagination: {
-        el: ".swiper-pagination",
+        el: '.swiper-pagination',
         clickable: true,
     },
 })
@@ -193,7 +193,7 @@ let headerLogoFixed = document.getElementById('headerLogoFixed')
 let headerGnbFixed = document.getElementById('headerGnbFixed')
 let isFixed = false
 const scrollEvent = (top, logo, gnb) => {
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener('scroll', (e) => {
         if (!isFixed && document.documentElement.scrollTop >= 50) {
             isFixed = true
             top.classList.add('fixed')
@@ -201,7 +201,7 @@ const scrollEvent = (top, logo, gnb) => {
             gnb.classList.add('fixed')
         }
     })
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener('scroll', (e) => {
         if (isFixed && document.documentElement.scrollTop < 50) {
             isFixed = false
             top.classList.remove('fixed')
