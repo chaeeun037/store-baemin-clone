@@ -80,51 +80,51 @@ const calcSalePrice = (p, s) => {
  * 
  */
 const renderContent = (eid, cdata, noSale) => {
-    for (let item of cdata) {
-        let li = document.createElement('div')
+    for (const item of cdata) {
+        const li = document.createElement('div')
         li.className = 'content-goods_col-li'
-        let container = document.createElement('div')
+        const container = document.createElement('div')
         container.className = 'content-goods_col-item'
-        let img = document.createElement('img')
+        const img = document.createElement('img')
         img.className = 'content-goods_col-item-photo'
         img.src = item.src
         // 이미지 상단 tag 부분
-        let tags = document.createElement('div')
+        const tags = document.createElement('div')
         tags.className = 'content-goods_col-tag-box'
         if (item.isGreen) {
-            let tgreen = document.createElement('img')
+            const tgreen = document.createElement('img')
             tgreen.src = '/static/images/tag-green.png'
             tags.appendChild(tgreen)
         }
         if (item.isNew) {
-            let tnew = document.createElement('img')
+            const tnew = document.createElement('img')
             tnew.src = '/static/images/tag-new.png'
             tags.appendChild(tnew)
         }
         if (!noSale && item.sale) {
-            let tsale = document.createElement('img')
+            const tsale = document.createElement('img')
             tsale.src = '/static/images/tag-sale.png'
             tags.appendChild(tsale)
         }
-        let info = document.createElement('div')
+        const info = document.createElement('div')
         info.className = 'content-goods_col-info'
         if (item.sale) {    // 빨간색 세일 표시 부분
-            let sale = document.createElement('div')
+            const sale = document.createElement('div')
             sale.className = 'content-goods_col-sale'
             sale.innerHTML = item.sale + '%'
             info.appendChild(sale)
         }
-        let title = document.createElement('div')
+        const title = document.createElement('div')
         title.className = 'content-goods_col-title'
         title.innerHTML = item.title
-        let money = document.createElement('div')
+        const money = document.createElement('div')
         money.className = 'content-goods_col-money'
-        let price = document.createElement('div')
+        const price = document.createElement('div')
         price.className = 'content-goods_col-price'
         price.innerHTML = formPrice(calcSalePrice(item.price, item.sale)) + '원'
         info.appendChild(title)
         if (item.sale) { // 원래 가격 부분
-            let origin = document.createElement('div')
+            const origin = document.createElement('div')
             origin.className = 'content-goods_col-origin'
             origin.innerHTML = formPrice(item.price) + '원'
             money.appendChild(origin)
@@ -144,9 +144,9 @@ const renderContent = (eid, cdata, noSale) => {
  * 상단 search input 이벤트 핸들러 달고 호출
  * 코드 정리 필요
  */
-let searchInput = document.getElementById('searchInput')
-let recentBox = document.getElementById('recentSearchBox')
-let closeButton = document.getElementById('recentSearchClose')
+const searchInput = document.getElementById('searchInput')
+const recentBox = document.getElementById('recentSearchBox')
+const closeButton = document.getElementById('recentSearchClose')
 
 const openSearchRecent = (input, box) => {
     input.addEventListener('click', () => {
@@ -188,9 +188,10 @@ var swiper = new Swiper('.mySwiper', {
 /**
  * 스크롤 내렸을 때 헤더 상단에 붙이기
  */
-let headerTopFixed = document.getElementById('headerTopFixed')
-let headerLogoFixed = document.getElementById('headerLogoFixed')
-let headerGnbFixed = document.getElementById('headerGnbFixed')
+const headerTopFixed = document.getElementById('headerTopFixed')
+const headerLogoFixed = document.getElementById('headerLogoFixed')
+const headerGnbFixed = document.getElementById('headerGnbFixed')
+
 let isFixed = false
 const scrollEvent = (top, logo, gnb) => {
     document.addEventListener('scroll', (e) => {
@@ -214,16 +215,16 @@ scrollEvent(headerTopFixed, headerLogoFixed, headerGnbFixed)
 
 
 const headerTop = document.getElementById('headerTop')
-for (let item of data.topMenus) {
-    let child = document.createElement('div')
+for (const item of data.topMenus) {
+    const child = document.createElement('div')
     child.className = 'header-top_menu'
     child.innerHTML = item
-    let bar = document.createElement('div')
+    const bar = document.createElement('div')
     bar.className = 'header-top_bar'
     headerTop.appendChild(child)
     if (item === '장바구니') {
         child.classList.add('no-padding')
-        let cart = document.createElement('div')
+        const cart = document.createElement('div')
         cart.className = 'header-top_cart'
         cart.innerHTML = 0
         headerTop.appendChild(cart)
@@ -233,18 +234,18 @@ for (let item of data.topMenus) {
 }
 
 const headerNav = document.getElementById('headerNav')
-for (let item of data.navMenus) {
-    let child = document.createElement('div')
+for (const item of data.navMenus) {
+    const child = document.createElement('div')
     child.className = 'header-gnb_menu'
     child.innerHTML = item
     headerNav.appendChild(child)
 }
 
 const slideBanner = document.getElementById('slideBanner')
-for (let item of data.slideBannerImages) {
-    let slide = document.createElement('div')
+for (const item of data.slideBannerImages) {
+    const slide = document.createElement('div')
     slide.className = 'swiper-slide'
-    let img = document.createElement('img')
+    const img = document.createElement('img')
     img.src = item
     slide.appendChild(img)
     slideBanner.appendChild(slide)
@@ -258,17 +259,17 @@ renderContent(content2, data.contents2)
 
 
 const content3 = document.getElementById('content3')
-for (let item of data.contents3) {
-    let container = document.createElement('div')
+for (const item of data.contents3) {
+    const container = document.createElement('div')
     container.className = 'content-goods_row-item'
-    let img = document.createElement('img')
+    const img = document.createElement('img')
     img.src = item.src
-    let titles = document.createElement('div')
+    const titles = document.createElement('div')
     titles.className = 'content-goods_row-titles'
-    let title = document.createElement('div')
+    const title = document.createElement('div')
     title.className = 'content-goods_row-title'
     title.innerHTML = item.title
-    let content = document.createElement('div')
+    const content = document.createElement('div')
     content.innerHTML = item.content
     container.appendChild(img)
     titles.appendChild(title)
@@ -281,8 +282,8 @@ const content4 = document.getElementById('content4')
 renderContent(content4, data.contents4, true)
 
 const footer = document.getElementById('footerTop')
-for (let item of data.footerMenus) {
-    let child = document.createElement('div')
+for (const item of data.footerMenus) {
+    const child = document.createElement('div')
     child.className = 'footer-top_item'
     child.innerHTML = item
     footer.appendChild(child)
