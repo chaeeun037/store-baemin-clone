@@ -37,7 +37,7 @@ const data = {
 
 /**
  * 1000단위 컴마 찍는 메소드
-*/
+ * */
 const formPrice = (p) => {
     var len, point, res
 
@@ -60,7 +60,6 @@ const formPrice = (p) => {
  * 실제 데이터는 세일 가격으로 세일 %를 계산하는 것이지만
  * 실제 데이터가 없으므로 반대로 세일 %로 세일 가격을 역계산한다.
  */
-
 const calcSalePrice = (p, s) => {
     if (s) {
         let res = p * (100 - s) * 0.01 + ""
@@ -183,7 +182,7 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
-});
+})
 
 
 /**
