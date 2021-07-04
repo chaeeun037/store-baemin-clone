@@ -169,6 +169,24 @@ closeSearchRecent(searchInput, recentBox, closeButton)
 
 
 /**
+ * 슬라이드 배너
+ * <!-- Initialize Swiper -->
+ */
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    effect: "fade",
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+
+
+/**
  * 스크롤 내렸을 때 헤더 상단에 붙이기
  */
 let headerTopFixed = document.getElementById('headerTopFixed')
