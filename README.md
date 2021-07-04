@@ -10,8 +10,6 @@
 
 
 
-
-
 ## 개발 목표
 
 * 배민문방구 메인 화면을 클론하여 개발한다.
@@ -32,6 +30,16 @@
 ## 개발 기간
 
 2021.06.26 - 2021.07.04
+
+
+
+
+
+## 실행 화면
+![](https://github.com/chaeeun037/store-baemin-clone/blob/2b29b6f33b69802bd0808c35b871d4cf04135128/%EC%BA%A1%EC%B2%98.JPG)
+![](https://github.com/chaeeun037/store-baemin-clone/blob/2b29b6f33b69802bd0808c35b871d4cf04135128/%EC%BA%A1%EC%B2%982.JPG)
+![](https://github.com/chaeeun037/store-baemin-clone/blob/2b29b6f33b69802bd0808c35b871d4cf04135128/%EC%BA%A1%EC%B2%983.JPG)
+
 
 
 
@@ -254,7 +262,7 @@
 
 1. [라이브러리가 모두 로딩된 이후에 어플리케이션 로직 넣기](https://github.com/chaeeun037/store-baemin-clone/commit/f1e7bfe9642deb8ba053f688efa13bc23a564616)
 
-2. [스크립트 코드 DOMContentLoaded사용]()
+2. [스크립트 코드 DOMContentLoaded사용](https://github.com/chaeeun037/store-baemin-clone/commit/2b29b6f33b69802bd0808c35b871d4cf04135128)
 
 3. [js 파일 formatting 돌리기](https://github.com/chaeeun037/store-baemin-clone/commit/716904a41cb8ef8fb34e1104d8cf5782f46fbf49)
 
