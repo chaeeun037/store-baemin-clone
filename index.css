@@ -317,8 +317,28 @@
     height: 30px;
 }
 
+.content-goods_col-link {
+    width: 280px;
+    position: absolute;
+    top: 333px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: ease-in 0.3s;
+}
 
-
+.content-goods_col-link-icon {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    font-size: 14px;
+    background: rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
 #content3 {
     margin-top: 20px;

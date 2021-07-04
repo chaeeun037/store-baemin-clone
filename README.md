@@ -109,6 +109,7 @@
 * css 작업
 * 슬라이드 배너 구현
 * 디테일 수정
+* 애니메이션 효과, 이벤트 핸들러 추가
 
 
 
@@ -126,6 +127,7 @@
 * 할인 %로 할인 가격 계산해서 ui 표시
   * 1000단위 컴마
 * 모든 cursor pointer 표시
+* 아이템에 마우스 올렸을 때 찜하기, 카트 아이콘 등장
 
 
 
@@ -228,21 +230,21 @@
 
 
 * 왜 잘나가요 부분에는 마우스 hover했을 때 찜하기, 카트가 안나올까?? 버그인가?
-
 * html element 를 불러올 때 성능상 초기에 한번 불러오고 계속 그것을 사용하는 것이 나을까 아니면 사용할때만 불러오고 소멸시키는 것이 나을까?
-
 * input focusout과 blur 차이는 이벤트 버블링 여부이다.
 
   * blur는 이벤트 버블링이 일어나지 않는다.
   * blur는 포커스를 잃은 자식만이 감지된다.
 
-  
+* 당연한 얘기지만 img 태그에는 자식 태그를 넣을 수 없다
+
+
 
 ## TODO LIST
 
-* goods 아이템에 마우스 hover시 찜, 장바구니 아이콘 생기는 것 애니메이션 구현
-* 확대했을 때 상단? 슬라이드 배너 UI 부분 이상하다
-* 코드 리팩토링
+* 많이 확대했을 때 슬라이드 배너 UI가 깨진다
+
+  
 
 
 
@@ -266,23 +268,7 @@
 
 
 4. index.js 문자열은 ' 쿼테이션 1개로 통일하기.
-
 5. index.js 파일에서 DOM element 만드는 helper 함수 생성해서 사용하기
-
-```js
-const makeAndAppendElement = (tagName, attributeMap, parentElement) => {
-  let element = document.createElement(tagName);
-  if (attributeMap) {
-    for (const key of attributeMap) {
-      element[key] = attributeMap[key];
-    }
-  }
-  if (parentElement) {
-    parentElement.appendChild(element);
-  }
-  return element;
-}
-```
 
 6. index.js 가급적 const를 쓸 수 있는곳은 모두 let 대신에 const 쓰기
   - 문맥상 const 는 변할수 없는 참조, 값을 나타내기에 가독성과 안정성을 높여준다.

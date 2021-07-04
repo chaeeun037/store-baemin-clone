@@ -73,13 +73,19 @@ const calcSalePrice = (p, s) => {
 }
 
 /**
- * DOM element 만들고 그리는 helper 함수
+ * DOM element 만들고, 속성 추가하고, 부모 요소에 붙이는 helper 함수
  */
 const makeAndAppendElement = (tagName, attributeMap, parentElement) => {
     let element = document.createElement(tagName)
     if (attributeMap) {
         for (const key in attributeMap) {
-            element[key] = attributeMap[key]
+            if (typeof attributeMap[key] === Array) {
+                for (const value of attributeMap[key]) {
+                    element[key].classList.add(value)
+                }
+            } else {
+                element[key] = attributeMap[key]
+            }
         }
     }
     if (parentElement) {
@@ -111,6 +117,13 @@ const renderColContent = (rootElement, contentData, noSaleTag) => {
         if (!noSaleTag && item.sale) {
             makeAndAppendElement('img', { src: '/static/images/tag-sale.png' }, tags)
         }
+
+        // 이미지 하단 link 부분
+        const link = makeAndAppendElement('div', { className: 'content-goods_col-link' }, colItem)
+        const wish = makeAndAppendElement('div', { className: 'content-goods_col-link-icon' }, link)
+        const cart = makeAndAppendElement('div', { className: 'content-goods_col-link-icon' }, link)
+        makeAndAppendElement('i', { className: 'xi-heart-o' }, wish)
+        makeAndAppendElement('i', { className: 'xi-cart-o' }, cart)
 
         // 이미지 밑 텍스트 부분
         const info = makeAndAppendElement('div', { className: 'content-goods_col-info' })
@@ -203,6 +216,26 @@ const fixedHeaderScollEvent = () => {
 }
 
 /**
+ * goods item에 마우스 hover했을 때 애니메이션
+ */
+const goodsItemHoverEvent = () => {
+    const itemImages = document.getElementsByClassName('content-goods_col-item')
+    const itemLinks = document.getElementsByClassName('content-goods_col-link')
+    for (let i = 0; i < itemImages.length; i++) {
+        itemImages[i].addEventListener('mouseover', () => {
+            itemLinks[i].style.opacity = 1
+            itemLinks[i].style.top = '303px'
+
+        })
+        itemImages[i].addEventListener('mouseout', () => {
+            itemLinks[i].style.opacity = 0
+            itemLinks[i].style.top = '333px'
+
+        })
+    }
+}
+
+/**
  * 전체 뷰 렌더링
  */
 const renderView = () => {
@@ -270,14 +303,8 @@ const renderView = () => {
     }
 }
 
+renderView()
 slideBannerInit()
 searchInputClickEvent()
 fixedHeaderScollEvent()
-renderView()
-
-
-
-
-/**
- * goods item에 마우스 hover했을 때 찜 버튼, 카트 버튼 만들기
- */
+goodsItemHoverEvent()
