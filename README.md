@@ -2,7 +2,7 @@
 
 
 
-<img src="https://store.baemin.com/data/skin/front/udweb_C/img/banner/7d4c23c41296ae46ffff9e8da1350b37_56349.png" />
+<img src="https://store.baemin.com/data/skin/front/udweb_C/img/banner/7d4c23c41296ae46ffff9e8da1350b37_56349.png" width="50%" />
 
 
 
@@ -31,7 +31,7 @@
 
 ## 개발 기간
 
-2021.06.26 - 
+2021.06.26 - 2021.07.04
 
 
 
@@ -39,10 +39,10 @@
 
 ## 학습 내용
 
-* UI를 개발하는데 필요한 적절한 HTML 태그를 선택하고 사용한다.
-* 시맨틱 태그를 이해하고 사용한다.
-* CSS의 position, float, flex 속성을 사용해서 화면 레이아웃을 구성한다.
-* CSS의 캐스캐이딩, 상속, box-model 개념을 이해한다.
+* [UI를 개발하는데 필요한 적절한 HTML 태그를 선택하고 사용한다.](https://github.com/chaeeun037/chaeeun037.github.io/blob/master/_posts/html-tag.md)
+* [시맨틱 태그를 이해하고 사용한다.](https://github.com/chaeeun037/chaeeun037.github.io/blob/master/_posts/semantic-tag.md)
+* [CSS의 position, float, flex 속성을 사용해서 화면 레이아웃을 구성한다.](https://github.com/chaeeun037/chaeeun037.github.io/blob/master/_posts/css-display.md)
+* [CSS의 캐스캐이딩, 상속, box-model 개념을 이해한다.](https://github.com/chaeeun037/chaeeun037.github.io/blob/master/_posts/css-cascading.md)
 
 
 
@@ -66,7 +66,7 @@
 
 ## UI 설계
 
-<img src="https://github.com/chaeeun037/store-baemin-clone/edit/main/UI%EC%84%A4%EA%B3%84.png" />
+<img src="https://github.com/chaeeun037/store-baemin-clone/blob/c034b276318b58edde5e035c58a293cd12eac60c/UI%EC%84%A4%EA%B3%84.png" width="30%">
 
 * 시맨틱 태그 사용
 
@@ -75,7 +75,11 @@
   * section
   * article
   * footer
-  * address
+  * ul
+  * li
+  * dl
+  * dt
+  * dd
 
 
 
@@ -161,6 +165,7 @@
 
   * 셀렉터로 선택해도 숨겨져있는 느낌?
   * green, new 등 태그 요소 선택 해보아도 숨겨져있어서 선택을 할 수가 없다!!
+    * 이렇게 구조화하는 이유가 뭘까? 
 
 
 
