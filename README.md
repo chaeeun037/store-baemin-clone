@@ -286,4 +286,5 @@ const makeAndAppendElement = (tagName, attributeMap, parentElement) => {
 
 6. index.js 가급적 const를 쓸 수 있는곳은 모두 let 대신에 const 쓰기
   - 문맥상 const 는 변할수 없는 참조, 값을 나타내기에 가독성과 안정성을 높여준다.
-  - for 문 안의 let도 const로 바꾸기.
+  - for 문 안의 let도 const로 바꾸기
+

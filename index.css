@@ -46,10 +46,6 @@
     vertical-align: 0px;
 }
 
-.header-top_bar:last-child {
-    display: none;
-}
-
 .header-top_cart {
     color: #29C1BC;
     padding: 0 15px 1px 4px;
@@ -237,7 +233,7 @@
     text-align: left;
 }
 
-.content-goods_col-li {
+.content-goods_col-container {
     margin: 20px 0;
     width: 25%;
     display: inline-block;
