@@ -304,7 +304,10 @@ const renderView = () => {
 }
 
 renderView()
-slideBannerInit()
-searchInputClickEvent()
-fixedHeaderScollEvent()
-goodsItemHoverEvent()
+
+document.addEventListener('DOMContentLoaded', () => {
+    slideBannerInit()
+    searchInputClickEvent()
+    fixedHeaderScollEvent()
+    goodsItemHoverEvent()
+})

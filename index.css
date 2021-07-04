@@ -251,7 +251,7 @@
 .content-goods_col-info {
     display: inline-block;
     width: 100%;
-    padding: 10px 0 20px 0px;
+    padding-top: 10px;
     box-sizing: border-box;
 }
 
